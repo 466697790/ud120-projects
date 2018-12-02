@@ -17,6 +17,17 @@
 
 import pickle
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
+enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
+print(type(enron_data),len(enron_data))
+f_count = len(enron_data['METTS MARK'])
+print(f_count)
+enron_data_list = list(enron_data)
+print(enron_data_list)
+print(len(enron_data_list))
 
+count = 0
+for p in enron_data_list:
+    if enron_data[p]['poi'] == 1:
+        count += 1
 
+print(count)
