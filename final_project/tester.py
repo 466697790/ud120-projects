@@ -93,7 +93,7 @@ def dump_classifier_and_data(clf, dataset, feature_list):
 
 
 def load_classifier_and_data():
-    with open(CLF_PICKLE_FILENAME, "r") as clf_infile:
+    with open(CLF_PICKLE_FILENAME, "rb") as clf_infile:
         clf = pickle.load(clf_infile)
     with open(DATASET_PICKLE_FILENAME, "r") as dataset_infile:
         dataset = pickle.load(dataset_infile)
