@@ -39,7 +39,6 @@ mismatch_count = (predict != labels_test).sum()
 accuracy = 1 - mismatch_count / len(labels_test)
 print(predict)
 print(labels_test)
-print(mismatch_count,accuracy)
-
+print(mismatch_count, accuracy)
 
 #########################################################
