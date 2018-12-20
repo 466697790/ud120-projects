@@ -12,8 +12,10 @@
 
 import pickle
 import sys
+from time import time
+
 sys.path.append("../tools/")
-from feature_format import featureFormat, targetFeatureSplit
+from tools.feature_format import featureFormat, targetFeatureSplit
 
 data_dict = pickle.load(open("../final_project/final_project_dataset.pkl", "r") )
 
@@ -29,4 +31,20 @@ labels, features = targetFeatureSplit(data)
 
 ### it's all yours from here forward!  
 
+from sklearn import tree
 
+clf = tree.DecisionTreeClassifier()
+print(clf)
+
+t0 = time()
+clf = clf.fit(features, labels)
+print("training time:", round(time() - t0, 3), "s")
+
+# t1 = time()
+# predict = clf.predict(features)
+# print("predicting time:", round(time() - t1, 3), "s")
+#
+# mismatch_count = (predict != labels_test).sum()
+# accuracy = 1 - mismatch_count / len(labels_test)
+#
+# print(mismatch_count,accuracy)
